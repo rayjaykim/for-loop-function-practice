@@ -5,7 +5,19 @@
 
 export function getClientsWithLetterInName(array, letter) {
   // Your code goes here...
-
+  var Acct = [];
+  var count = 0;
+  
+  for (var elem in array) {
+    for (var unit in array[elem].name) {
+      if (array[elem].name[unit] == letter.toUpperCase() || array[elem].name[unit] == letter.toLowerCase() && count == 0) {
+        Acct.push(array[elem].name);
+        count = 1;
+      }
+    }
+    count = 0;
+  }
+  return Acct;
 }
 
 // === TEST YOURSELF ===

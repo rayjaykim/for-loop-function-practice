@@ -7,7 +7,26 @@
 
 export function separateNamesWithAFromRest(array) {
   // Your code goes here...
+  var aName = [];
+  var otherName = [];
+  var newNames = [];
+  var count = 0;
 
+  for (var elem in array) {
+    for (var unit in array[elem]) {
+      if (array[elem][unit] == 'a' || array[elem][unit] == 'A' && count == 0) {
+        aName.push(array[elem]);
+        count = 1;
+      }
+    }
+    if (count == 0) {
+      otherName.push(array[elem]);
+    }
+    count = 0;
+  }
+  newNames.push(aName);
+  newNames.push(otherName);
+  return newNames;
 }
 
 

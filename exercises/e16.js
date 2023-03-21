@@ -7,7 +7,19 @@
 
 export function flatArrays(array) {
   // Your code goes here...
+  var acct = [];
 
+  for (var elem in array) {
+    if (array[elem].length == 1) {
+      acct.push(array[elem]);
+    }
+    else {
+      for (var unit in array[elem]) {
+        acct.push(array[elem][unit]);
+      }
+    }
+  }
+  return acct;
 }
 
 
